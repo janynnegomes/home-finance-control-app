@@ -1,4 +1,9 @@
 <div class="container-fluid p-0">
+  <div class="d-flex justify-content-between app-header">
+     <fa name="navicon" class="icon"></fa>
+      <h4 class="pt-3 pb-3">Home Financial App</h4>
+      <fa name="cog" class="icon"></fa>
+  </div>
   <div class="jumbotron financial-header pb-0 mb-0">
     <div class="container">
         <ul class="nav nav-pills justify-content-center">
@@ -15,6 +20,9 @@
       <h1 class="display-4 text-center">$90000</h1>
       <p class="lead text-center">Your expenses</p>
 
+      <div class="container chart-container">
+          <canvas  id="chart"></canvas> 
+      </div>
       <ul class="mt-4 nav nav-tabs justify-content-center">
           <li class="nav-item">
             <a class="nav-link active" href="#">CATEGORIES</a>
@@ -57,34 +65,7 @@
                 <small>- $1171</small>
               </div>             
             </a>     
-            <a href="#" class="list-group-item list-group-item-action p-4">
-                <div class="d-flex w-100 justify-content-between lign-items-center">
-                  <fa name="bus"></fa>
-                  <h5 class="mb-1">Transport</h5>
-                  <small>- $1171</small>
-                </div>             
-              </a>     
-              <a href="#" class="list-group-item list-group-item-action p-4">
-                  <div class="d-flex w-100 justify-content-between lign-items-center">
-                    <fa name="bus"></fa>
-                    <h5 class="mb-1">Transport</h5>
-                    <small>- $1171</small>
-                  </div>             
-                </a>     
-                <a href="#" class="list-group-item list-group-item-action p-4">
-                    <div class="d-flex w-100 justify-content-between lign-items-center">
-                      <fa name="bus"></fa>
-                      <h5 class="mb-1">Transport</h5>
-                      <small>- $1171</small>
-                    </div>             
-                  </a>                    
-                  <a href="#" class="list-group-item list-group-item-action p-4">
-                      <div class="d-flex w-100 justify-content-between lign-items-center">
-                        <fa name="bus"></fa>
-                        <h5 class="mb-1">Transport</h5>
-                        <small>- $1171</small>
-                      </div>             
-                    </a>     
+              
           </div>      
     </div>
   </div>
