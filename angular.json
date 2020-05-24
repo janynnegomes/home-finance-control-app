@@ -16,8 +16,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "baseHref": "https://janynnegomes.github.io/home-finance-control-app/",
+          "options": {           
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -44,6 +43,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref": "https://janynnegomes.github.io/home-finance-control-app/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
