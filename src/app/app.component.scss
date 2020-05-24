@@ -1,3 +1,16 @@
+.app-header{
+    padding: .5rem!important;
+    background-color:#523479; 
+
+    fa{
+        color:#ffffff;
+    }
+
+    h4{
+        color: #ffffff;
+    }
+}
+
 .financial{
     &-header{
         background-color:#523479;   
@@ -23,6 +36,12 @@
                 }
             }
 
+            .chart-container{
+                canvas{
+                    max-width: 320px !important;
+                    margin: 32px auto;
+                }
+            }
             .nav-tabs{
                 border-bottom: 0px;
                 .nav-item{
@@ -78,4 +97,12 @@
             }
         }
     }
+}
+
+fa{      
+    font-size: 1.5em;
+    padding: 8px;
+    border-radius: 5px;
+    width: 2em;
+    text-align: center;
 }
