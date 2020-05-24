@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "https://janynnegomes.github.io/home-finance-control-app",
+            "baseHref": "https://janynnegomes.github.io/home-finance-control-app/",
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
