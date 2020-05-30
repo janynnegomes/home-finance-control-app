@@ -1,10 +1,10 @@
 <div class="container-fluid p-0">
   <div class="d-flex justify-content-between app-header">
      <fa name="navicon" class="icon"></fa>
-      <h4 class="pt-3 pb-3">Home Financial App</h4>
+      <h5 class="pt-3 pb-3">Home Financial App</h5>
       <fa name="cog" class="icon"></fa>
   </div>
-  <div class="jumbotron financial-header pb-0 mb-0">
+  <div class="jumbotron financial-header pb-0 pt-3 mb-0">
     <div class="container">
         <ul class="nav nav-pills justify-content-center">
             <li class="nav-item">
@@ -17,11 +17,11 @@
               <a class="nav-link" href="#">Year</a>
             </li>
           </ul>
-      <h1 class="display-4 text-center">$90000</h1>
-      <p class="lead text-center">Your expenses</p>
+      
+          <h3 class="display-4">$90000</h3>   
 
-      <div class="container chart-container">
-          <canvas  id="chart"></canvas> 
+      <div class="container chart-container">   
+          <canvas  id="chart"></canvas>           
       </div>
       <ul class="mt-4 nav nav-tabs justify-content-center">
           <li class="nav-item">
@@ -33,40 +33,5 @@
         </ul>
     </div>
   </div>     
-
-  <div class="row m-0 financial-lists">
-    <div class="col p-0">
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between lign-items-center">
-                  <fa name="coffee"></fa>
-                <h5 class="mb-1">Restaurants and coffees</h5>
-                <small>- $1,171</small>
-              </div>             
-            </a> 
-            <a href="#" class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between lign-items-center">
-                  <fa name="money"></fa>
-                <h5 class="mb-1">Utility Payments</h5>
-                <small>- $1171</small>
-              </div>             
-            </a> 
-            <a href="#" class="list-group-item list-group-item-action p-4">
-              <div class="d-flex w-100 justify-content-between lign-items-center">
-                <fa name="heart"></fa>
-                <h5 class="mb-1">Health and Beauty</h5>
-                <small>- $1171</small>
-              </div>             
-            </a> 
-            <a href="#" class="list-group-item list-group-item-action p-4">
-              <div class="d-flex w-100 justify-content-between lign-items-center">
-                <fa name="bus"></fa>
-                <h5 class="mb-1">Transport</h5>
-                <small>- $1171</small>
-              </div>             
-            </a>     
-              
-          </div>      
-    </div>
-  </div>
+<app-categories ></app-categories>
 </div>

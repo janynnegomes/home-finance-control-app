@@ -1,0 +1,29 @@
+.financial{
+    &-lists{
+        .list-group{
+            height: calc(100vh - 282px);
+            overflow: scroll;
+            scroll-behavior: smooth;
+
+            .list-group-item{
+                padding: 1.5rem;
+                h5{
+                    color:#6a5a80;
+                    font-size: 1.15rem;
+                    font-weight: 400;
+                }
+                
+                fa{
+                    background: #f74386;
+                    font-size: 1.5em;
+                    padding: 8px;
+                    color: #ffffff;
+                    border-radius: 5px;
+                    width: 2em;
+                    text-align: center;     
+                    margin-right: 1rem;     
+                }
+            }
+        }
+    }
+}

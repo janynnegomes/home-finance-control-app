@@ -1,0 +1,19 @@
+<div class="row m-0 financial-lists">
+    <div class="col p-0">
+        <a href="#" class="list-group-item list-group-item-action" *ngIf="items.length < 1">
+            <div class="d-flex flex-column justify-content-between lign-items-center text-center">                
+            <h5 class="mb-1">Oh no :(</h5>
+            <p>You didnt registered any expenses</p>
+            </div>             
+        </a> 
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" *ngFor="let item of items">
+                <div class="d-flex w-100 justify-content-between lign-items-center">
+                    <fa name="{{item?.category?.icon}}"></fa>
+                <h5 class="mb-1">{{item?.category?.name}}</h5>
+                <small>{{item?.total}}</small>
+                </div>             
+            </a>         
+        </div>      
+    </div>
+</div>
