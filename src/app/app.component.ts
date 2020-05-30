@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Chart } from 'chart.js';
+import { DataService } from './shared/services/data';
 
 @Component({
   selector: 'app-root',
@@ -8,29 +9,35 @@ import { Chart } from 'chart.js';
 })
 export class AppComponent implements OnInit {
   
+  constructor(@Inject(DataService) private dataService: DataService) {
+  }
+  
   chart:any = {}
 
   title = 'Home Finance Control App';
 
   ngOnInit(): void {
+
+    //generate data
+    this.dataService.generate()
+    const summary = this.dataService.summary    
+    const labels =  summary.map(e=>e.category.name)
+    const data = summary.map(c=>c.total)
+    const colors =[  'rgb(207, 169, 200)','rgb(235, 149, 83,1)','rgb(74, 184, 147)','rgb(232, 93, 87)']
+
     this.chart = new Chart('chart', {
       type: 'doughnut',
       data: {
-          labels: ['Restaurants and coffees', 'Utility Payments','Health and Beauty','Transport'],
+          labels: labels,
           datasets: [{
-              label: '# of Votes',
-              data: [1171, 800, 90, 500],
-              backgroundColor: [
-                  'rgb(207, 169, 200)',
-                  'rgb(235, 149, 83,1)',
-                  'rgb(74, 184, 147)',
-                  'rgb(232, 93, 87)'
-              ],
-              weight:1
+              data: data,
+              backgroundColor: colors,
+              borderWidth:0            
           }]
       },
       options: {
         responsive:true,
+        cutoutPercentage: 80,
         legend: {
           display: false,
       }
