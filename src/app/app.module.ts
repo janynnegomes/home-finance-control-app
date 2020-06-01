@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,8 @@ import { ComponentsModule } from './components/components.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    ComponentsModule
+    ComponentsModule,
+    AccordionModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

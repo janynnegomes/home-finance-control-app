@@ -154,7 +154,13 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 
+ngx-bootstrap/accordion
+
+ngx-bootstrap/collapse
+
 ngx-bootstrap/datepicker
+
+ngx-bootstrap/utils
 
 regenerator-runtime
 MIT

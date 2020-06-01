@@ -1,37 +1,8 @@
 <div class="container-fluid p-0">
   <div class="d-flex justify-content-between app-header">
      <fa name="navicon" class="icon"></fa>
-      <h5 class="pt-3 pb-3">Home Financial App</h5>
-      <fa name="cog" class="icon"></fa>
+      <h5 class="pt-3 pb-3 app-link" routerLink="home">Home Financial App</h5>
+      <fa name="plus" class="icon"></fa>
   </div>
-  <div class="jumbotron financial-header pb-0 pt-3 mb-0">
-    <div class="container">
-        <ul class="nav nav-pills justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Day</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Month</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Year</a>
-            </li>
-          </ul>
-      
-          <h3 class="display-4">$90000</h3>   
-
-      <div class="container chart-container">   
-          <canvas  id="chart"></canvas>           
-      </div>
-      <ul class="mt-4 nav nav-tabs justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">CATEGORIES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">ACTIVITIES</a>
-          </li>            
-        </ul>
-    </div>
-  </div>     
-<app-categories ></app-categories>
+  <router-outlet></router-outlet>
 </div>
