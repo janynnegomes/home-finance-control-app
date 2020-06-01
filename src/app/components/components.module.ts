@@ -5,11 +5,12 @@ import { ActivitiesComponent } from './activities/activities.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule } from '@angular/router';
+import { NewExpenseComponent } from './new-expense/new-expense.component';
 
 
 
 @NgModule({
-  declarations: [CategoriesComponent, ActivitiesComponent, DetailsComponent],
+  declarations: [CategoriesComponent, ActivitiesComponent, DetailsComponent, NewExpenseComponent],
   imports: [
     CommonModule,
     AngularFontAwesomeModule,
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
     CategoriesComponent,
     ActivitiesComponent,
     DetailsComponent,
+    NewExpenseComponent,
     RouterModule
   ]
 })
