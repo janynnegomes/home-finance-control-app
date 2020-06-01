@@ -158,7 +158,13 @@ ngx-bootstrap/accordion
 
 ngx-bootstrap/collapse
 
+ngx-bootstrap/component-loader
+
 ngx-bootstrap/datepicker
+
+ngx-bootstrap/modal
+
+ngx-bootstrap/positioning
 
 ngx-bootstrap/utils
 
