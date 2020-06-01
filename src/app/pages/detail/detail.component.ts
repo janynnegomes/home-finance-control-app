@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DetailComponent implements OnInit {
 
   categoryLink:string = ""
-  category = {}
+  category:any = {}
   categories = []
   total = 0
 
