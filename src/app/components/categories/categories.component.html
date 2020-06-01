@@ -7,11 +7,14 @@
             </div>             
         </a> 
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action" *ngFor="let item of items">
-                <div class="d-flex w-100 justify-content-between lign-items-center">
+                
+            <a class="list-group-item list-group-item-action" 
+            *ngFor="let item of items"  href="/{{item.category.link}}/details">    
+                <div class="d-flex w-100 justify-content-between align-items-center">
                     <fa name="{{item?.category?.icon}}"></fa>
-                <h5 class="mb-1">{{item?.category?.name}}</h5>
-                <small>{{item?.total}}</small>
+                <h4 class="mb-1 flex-grow-1">{{item?.category?.name}}</h4>
+                <small>{{item?.total | currency: 'USD'}} </small>
+                <fa name="angle-right"></fa>
                 </div>             
             </a>         
         </div>      

@@ -1,0 +1,31 @@
+.detail-component{
+    .app-header{
+        .title{
+            color:#ffffff;
+        }
+        select{
+            margin: 16px auto;
+            border: 0;
+            padding: 8px;
+            background: unset;
+            color: white;
+
+            option {
+                margin: 40px auto;
+                background: #c8bbd4;
+                color: #523479;
+                text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+                text-align: center;
+
+                &:active{
+                    background:red;
+                }
+            }
+
+        }
+    }
+    .content{
+        background-color: #f7f7f7;        
+        padding: 8px;
+    }
+}

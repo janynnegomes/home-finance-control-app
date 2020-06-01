@@ -3,3 +3,44 @@
 body{
     background-color: #523479;
 }
+
+// shared styles
+accordion{    
+    &-group{
+        .panel{   
+            background: unset;  
+            border:0;
+
+            &-heading{
+               
+                .title{
+                    width: 160px;
+                    margin: 8px auto;
+                    text-align: center;
+                    background: unset;
+                    border: solid 1px #dfdae4;               
+                    border-radius: 50px !important;
+                    padding: 8px;
+                }
+                
+                button{
+                    color: #a4a8ad;
+                    font-weight: 600;
+                }
+            }
+    
+            &-body{
+                padding: 0;
+    
+                .list-group-item{
+                    border-bottom: 1px #efefef solid;
+                    margin:0;
+                    border-left: 0;
+                    border-right: 0;
+                    color: #9a81b9;
+                }
+            }
+        }
+    }
+   
+}
