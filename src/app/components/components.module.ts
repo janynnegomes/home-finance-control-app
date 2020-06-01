@@ -12,7 +12,8 @@ import { RouterModule } from '@angular/router';
   declarations: [CategoriesComponent, ActivitiesComponent, DetailsComponent],
   imports: [
     CommonModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    RouterModule
   ],
   exports:[
     CategoriesComponent,

@@ -9,7 +9,7 @@
         <div class="list-group">
                 
             <a class="list-group-item list-group-item-action" 
-            *ngFor="let item of items"  href="/{{item.category.link}}/details">    
+            *ngFor="let item of items"  routerLink="/{{item.category.link}}/details">    
                 <div class="d-flex w-100 justify-content-between align-items-center">
                     <fa name="{{item?.category?.icon}}"></fa>
                 <h4 class="mb-1 flex-grow-1">{{item?.category?.name}}</h4>
