@@ -7,18 +7,18 @@
   <ng-template #new>
       <div class="d-flex justify-content-between app-header"> 
           <fa name="angle-left" class="icon" (click)="modalRef.hide()"></fa>        
-           <h5 class="p-3 app-link pull-lef">Register</h5>
+           <h5 class="app-link flex-fill">Expense</h5>
         </div>
         <div class="modal-body">
           <div class="row">
-            <div class="col-md-6 col-sm-12 col-md-offset-3">
-                <app-new-expense>      
+            <div class="col">
+                <app-new-expense [(data)]="newExpense">      
                 </app-new-expense>
             </div>
           </div>
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button type="button" class="btn btn-default btn-sm-block align-self-center" (click)="modalRef.hide()">Save</button>
+          <button type="button" class="btn btn-default btn-sm-block align-self-center" (click)="save()">Save</button>
         </div>
  
   </ng-template>

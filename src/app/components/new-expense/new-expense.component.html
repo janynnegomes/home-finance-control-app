@@ -1,24 +1,51 @@
-<form>
-    <div class="form-group">
-        <label for="inputCategory">Category</label>
-        <select class="form-control" id="inputCategory"  aria-describedby="categoryHelp">
-            <option *ngFor="let category of categories" value="{{category[0]}}">{{category[1].name}}</option>
-        </select>
+<form #formNewExpense [formGroup]="formGroupExpense">
+    <div class="form-group header">
+        <input type="number" class="form-control" id="inputValue" formControlName="value" placeholder="$0.000,00">
     </div>
-    <div class="form-group">
-        <label for="inputDate">Date</label>
-        <input type="date" class="form-control" id="inputDate" aria-describedby="dateHelp">
-        <small id="dateHelp" class="form-text text-muted">You can choose past date</small>
+    <div class="form-group d-flex p-3">
+        <label for="inputCategory">
+            <fa name="star"></fa>
+        </label>
+        <div class="ng-autocomplete">
+            <ng-autocomplete 
+            formControlName="category"
+              [data]="categories"
+              [searchKeyword]="'search'"
+              [placeHolder]="'What it was for?'"
+              [itemTemplate]="itemTemplate"
+              [notFoundTemplate]="notFoundTemplate" >                                 
+            </ng-autocomplete>
+             
+            <ng-template #itemTemplate let-item class="">
+                <div class="d-flex align-items-center">
+                    <fa name="{{item.value.icon}}"></fa>
+                    <a [innerHTML]="item.value.name" >               
+                            </a>                        
+                </div>                
+            </ng-template>
+             
+            <ng-template #notFoundTemplate let-notFound>
+            <div [innerHTML]="notFound"></div>
+            </ng-template>
+            </div>
+             
     </div>
-    <div class="form-group">
-        <label for="inputValue">Value</label>
-        <input type="number" class="form-control" id="inputValue" aria-describedby="valueHelp">
-        <small id="valueHelp" class="form-text text-muted">The value of expense</small>
+    <div class="form-group d-flex p-3">
+        <label for="inputDate" (click)="dp.toggle()"><fa name="calendar"></fa></label>
+        <input type="text" class="form-control" id="inputDate" 
+        formControlName="date"
+        #dp="bsDatepicker"
+           bsDatepicker
+           [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY',  returnFocusToInput: true }"
+           [bsValue]="bsValue" [maxDate]="maxDate">
+           
     </div>
-    <div class="form-group">
-        <label for="inputLocation">Location</label>
-        <input type="text" class="form-control" id="inputLocation"  aria-describedby="locationHelp">
-        <small id="locationHelp" class="form-text text-muted">Ex: Starbucks, MC Donalds</small>
+   
+    <div class="form-group d-flex p-3">
+        <label for="inputLocation"><fa name="location"></fa></label>
+        <input type="text" class="form-control" id="inputLocation"
+        formControlName="location"
+        placeholder="Ex: Starbucks, MC Donalds">        
     </div>
     
 </form>

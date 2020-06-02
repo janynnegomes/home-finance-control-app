@@ -19,7 +19,7 @@ export class CategoriesComponent implements OnInit, OnDestroy {
     const summary = this.dataService.summary
     console.log(summary)
     this.items = summary
-    this.expensesSubscriber.subscribe(data=> {this.items=data; console.log(data)})    
+    this.expensesSubscriber.subscribe(data=> {this.items=this.dataService.summary; console.log('subscribe',this.dataService.summary)})    
   }
 
   ngOnDestroy(){
