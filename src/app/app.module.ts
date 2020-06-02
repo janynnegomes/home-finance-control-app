@@ -8,8 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ComponentsModule } from './components/components.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+ 
 @NgModule({
   declarations: [
     AppComponent    
@@ -19,11 +22,15 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
     ComponentsModule,
+    AutocompleteLibModule,
     ModalModule.forRoot(),    
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

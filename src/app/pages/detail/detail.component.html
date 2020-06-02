@@ -20,7 +20,7 @@
                         <label class="align-self-center">Day balance {{date?.total | currency: 'USD'}}</label>
                     </div>
                     <a class="list-group-item list-group-item-action " *ngFor="let item of date?.items">    
-                        <div class="d-flex w-100 justify-content-between lign-items-center p-sm-2 p-md-0">
+                        <div class="d-flex justify-content-between lign-items-center p-sm-2 p-md-0">
                             <h5 class="mb-1">{{item?.name}}</h5>
                             <small>{{item?.value | currency: 'USD'}}</small>
                         </div>            

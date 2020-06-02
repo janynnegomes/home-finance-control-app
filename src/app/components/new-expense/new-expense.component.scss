@@ -1,13 +1,61 @@
+::ng-deep  ng-autocomplete{
+    .autocomplete-container{
+        box-shadow: unset;
+        .suggestions-container{
+            li{
+                div{
+                    div{
+                        fa{
+                            padding:0 16px;
+                            color: #523479 !important;
+                        }
+
+                        a{
+                            padding-left: 0;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
 form{
-    .form-group{
-        input{
+    .form-group{        
+        &.header{
+            background-color: #523479;
+            padding-top: 64px;
+            padding-bottom: 32px;
+            input{
+                border: 0;
+                background: unset;
+                font-size: 32px;
+                color:#ffffff;
+
+                &::placeholder{
+                    color:#ffffff;
+                }
+            }
+        }
+
+        input, .ng-autocomplete{
             border-top: 0;
             border-left: 0;
             border-right: 0;
-            border-bottom: solid 3px #523479;
+            border-bottom: solid 2px #dae1e7;
             border-radius: 0;
             padding-top: 0;
+            margin-left: 8px;
         }
-    }
-    
+
+       
+
+        fa{
+            margin-right: 8px;
+            color: #dae1e7;
+        }
+
+       
+    }    
 }
