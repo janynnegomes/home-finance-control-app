@@ -1,0 +1,34 @@
+.btn{
+
+    border:0;
+    padding: 8px;
+    min-width: 120px;
+
+    @media (max-width: 575.98px) { 
+        padding: 16px;
+    }
+
+    &-primary{
+        color: #523479;
+        background-color: #ffc107;
+
+        &:hover, &:active{
+            color: #ffffff;
+            background-color: #523479 !important;
+        }
+
+        
+    }
+
+    &-secondary{
+        color: #ffc107;
+        background-color: #523479;
+
+        &:hover{
+            color: #523479;
+            background-color: #ffc107;
+        }
+    }
+
+    
+}
