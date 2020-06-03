@@ -10,6 +10,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [CategoriesComponent, ActivitiesComponent, DetailsComponent, NewExpenseComponent],
   imports: [
@@ -19,8 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFontAwesomeModule,
     RouterModule,
     AutocompleteLibModule,
-    BsDatepickerModule.forRoot()
-
+    BsDatepickerModule,
   ],
   exports:[
     CategoriesComponent,

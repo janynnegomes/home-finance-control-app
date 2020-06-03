@@ -1,0 +1,48 @@
+
+.modal{
+    height: 100vh;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 100%;
+    
+    // Extra small devices (portrait phones, less than 576px)
+    @media (max-width: 575.98px) { 
+        width: 100%;
+    }
+
+    &-backdrop{
+        opacity: 0.8 !important;
+        background-color: #523479; 
+    }
+
+    &-dialog{
+        margin: 0;
+        .modal-content{          
+            height: 100vh;
+            width: 50vw;
+            
+            @media (max-width: 575.98px) { 
+                width: 100vw;
+            }
+
+            .modal-body{
+                padding: 0;
+                margin: 0;
+
+                .row{
+                    height: calc(100vh - 148px);
+                    .col{
+                        app-loading{
+                            width: 100% !important;   
+                        }
+                    }
+                }
+            }
+
+            .modal-footer{
+                background-color: #523479;
+            }
+        }
+    }
+    
+}

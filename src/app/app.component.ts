@@ -18,6 +18,10 @@ export class AppComponent implements OnInit {
   };
   newExpense = {}
 
+  newExpenseLoadingTitle:string =""
+  newExpenseLoadingText:string=""
+  newExpenseShowLoading:boolean = false
+
   constructor(@Inject(DataService) private dataService: DataService,
   private modalService: BsModalService,
   private datePipe: DatePipe) {
@@ -32,12 +36,23 @@ export class AppComponent implements OnInit {
     this.modalRef = this.modalService.show(template,this.config);
   }
   save(){
-    debugger
+
+    this.newExpenseLoadingText = 'while we are saving your new expense'
+    this.newExpenseLoadingTitle = "Wait a moment"
+    this.newExpenseShowLoading = true;
+
     this.dataService.add(
       this.newExpense['category'].name,
-      this.newExpense['value'], 
+      parseFloat(this.newExpense['value']), 
       this.datePipe.transform(this.newExpense['date'],'yyyy-MM-dd'),
-      this.newExpense['location'])
-      this.modalRef.hide();
+      this.newExpense['location'])     
+
+      let modal =this.modalRef
+      let loading =this.newExpenseShowLoading
+      // setTimeout(function(){
+      //   loading = false;
+      //   modal.hide();
+      // },1000)
+      
   }
 }

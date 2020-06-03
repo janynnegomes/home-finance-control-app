@@ -12,7 +12,13 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+//import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { UiModule } from './shared/ui/ui.module';
  
+// const maskConfig: Partial<IConfig> = {
+//   validation: false
+// };
+
 @NgModule({
   declarations: [
     AppComponent    
@@ -25,10 +31,12 @@ import { DatePipe } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
+    UiModule,
     AutocompleteLibModule,
     ModalModule.forRoot(),    
     AccordionModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+  // NgxMaskModule.forRoot()
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
