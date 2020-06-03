@@ -10,15 +10,20 @@
            <h5 class="app-link flex-fill">Expense</h5>
         </div>
         <div class="modal-body">
-          <div class="row">
+          <div class="row align-items-center" *ngIf="newExpenseShowLoading">
             <div class="col">
-                <app-new-expense [(data)]="newExpense">      
-                </app-new-expense>
+              <app-loading [title]="newExpenseLoadingTitle" [text]="newExpenseLoadingText" ></app-loading>            
             </div>
+          </div>
+          <div class="row" *ngIf="!newExpenseShowLoading">
+              <div class="col">           
+                  <app-new-expense [(data)]="newExpense" >      
+                  </app-new-expense>
+              </div>
           </div>
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button type="button" class="btn btn-default btn-sm-block align-self-center" (click)="save()">Save</button>
+          <button type="button" class="btn btn-primary" (click)="save()">Save</button>
         </div>
  
   </ng-template>
