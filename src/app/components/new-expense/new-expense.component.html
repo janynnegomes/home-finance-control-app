@@ -1,4 +1,4 @@
-<form #formNewExpense [formGroup]="formGroupExpense">
+<form #formNewExpense [formGroup]="formGroupExpense" autocomplete="off">
     <div class="form-group header">
         <input type="text" class="form-control" 
         id="inputValue" 
@@ -41,7 +41,7 @@
         formControlName="date"
         #dp="bsDatepicker"
            bsDatepicker
-           [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY',  returnFocusToInput: true }"
+           [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY',  returnFocusToInput: true, containerClass: 'theme-orange', adaptivePosition:true }"
            [bsValue]="bsValue" [maxDate]="maxDate">
            
     </div>

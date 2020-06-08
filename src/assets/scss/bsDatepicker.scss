@@ -1,0 +1,48 @@
+bs-datepicker-container{
+    background:#52347994;
+
+    // Extra small devices (portrait phones, less than 576px)
+    @media (max-width: 575.98px) {      
+        transform: translate3d(0px, 0px, 0px) !important;
+        padding:20px;
+        height: 100vh;
+        width: 100vw;
+        margin-top: -50%;
+        top: 50% !important;   
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) and (max-width: 767.98px) {  
+        transform: translate3d(0px, 0px, 0px) !important;
+        padding:20px;
+        height: 100vh;
+        width: 100vw;
+        margin-top: 0;
+        top: 0 !important; 
+    }
+    
+    .bs-datepicker{
+
+        .bs-datepicker-container{
+            padding: 0;
+            width: 100%;
+        }   
+       
+
+        
+        // Extra small devices (portrait phones, less than 576px)
+        @media (max-width: 575.98px) {  }
+
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 576px) and (max-width: 767.98px) {  }
+
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) and (max-width: 991.98px) {  }
+
+        // Large devices (desktops, 992px and up)
+        @media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+        // Extra large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) {  }
+    }
+}
