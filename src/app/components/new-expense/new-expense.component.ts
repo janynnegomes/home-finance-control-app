@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Inject, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from 'src/app/shared/services/data';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-expense',
@@ -17,17 +17,23 @@ export class NewExpenseComponent implements OnInit {
   @Input()
   data = {}
 
+  @Input()
+  displayErrors :boolean = false
+
   @Output()
   dataChange = new EventEmitter()
+
+  @Output() 
+  isValid= new EventEmitter()
   
   formGroupExpense = new FormGroup({
-    value: new FormControl(''),
-    category: new FormControl(''),
-    location: new FormControl(''),
-    date: new FormControl(''),
-    
+    value: new FormControl('', [Validators.required, Validators.min(0)]),
+    category: new FormControl('', Validators.required),
+    location: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    date: new FormControl('', Validators.required),
+    notes: new FormControl(''),    
   });
-  
+
   constructor(@Inject(DataService) private dataService: DataService) {
   }
 
@@ -37,9 +43,11 @@ export class NewExpenseComponent implements OnInit {
     this.maxDate.
     setDate(this.maxDate.getDate() + 7);   
     
-    this.formGroupExpense.valueChanges.subscribe(value=> {console.log(value), this.dataChange.emit(value)})
+    this.formGroupExpense.valueChanges.subscribe(value=> {console.log(value), this.dataChange.emit(value), this.isValid.emit(this.formGroupExpense.valid)})
   }
 
- 
+  get formGroupControls(){
+    return this.formGroupExpense.controls;
+  }
 
 }

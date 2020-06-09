@@ -20,10 +20,11 @@ export class HomeComponent implements OnInit {
     this.dataService.expenses.subscribe(data=> {this.summary=this.dataService.summary;    this.total = data.reduce((a,b)=>a+b)
 ;      console.log('subscribe',this.dataService.summary)})    
 
+debugger
     this.summary = this.dataService.summary    
     const labels =  this.summary.map(e=>e.category.name)
     const data = this.summary.map(c=>c.total)
-    this.total = data.reduce((a,b)=>a+b)
+    this.total = data.length > 0? data.reduce((a,b)=>a+b) : 0
     
     const colors =[  'rgb(207, 169, 200)','rgb(235, 149, 83,1)','rgb(74, 184, 147)','rgb(232, 93, 87)']
 

@@ -23,7 +23,9 @@ export class CategoriesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.expensesSubscriber.unsubscribe()
+    if(this.expensesSubscriber){
+     // this.expensesSubscriber.unsubscribe()
+    }
   }
 
 }
