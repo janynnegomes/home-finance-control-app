@@ -1,0 +1,36 @@
+.form{
+    &-group{
+        label{
+            align-self: center;
+
+            fa{
+                i{
+                    font-size: 1.5em;
+                }
+            }
+        }
+        &.error{
+
+            &.header{
+                background-color: #dc3545;
+
+                input{
+                    border: 0 !important;
+                }
+                
+            }
+
+            label, fa{
+
+                color: #dc3545 !important;
+            }
+            input{
+                color: #dc3545  !important;
+                border-bottom: solid 1px #dc3545 !important;
+                &::placeholder{
+                    color: #dc3545  !important;
+                }
+            }
+        }
+    }
+}
