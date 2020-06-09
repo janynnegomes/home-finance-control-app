@@ -17,8 +17,8 @@
           </div>
           <div class="row" *ngIf="!newExpenseShowLoading">
               <div class="col">           
-                  <app-new-expense [(data)]="newExpense" >      
-                  </app-new-expense>
+                  <app-new-expense  (isValid)=validChanged($event) [(data)]="newExpense" [displayErrors]="displayFormErrors">      
+                  </app-new-expense >
               </div>
           </div>
         </div>

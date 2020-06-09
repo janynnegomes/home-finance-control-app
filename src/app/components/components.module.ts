@@ -9,6 +9,7 @@ import { NewExpenseComponent } from './new-expense/new-expense.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 
 @NgModule({
@@ -21,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     AutocompleteLibModule,
     BsDatepickerModule,
+    AccordionModule
+
   ],
   exports:[
     CategoriesComponent,
