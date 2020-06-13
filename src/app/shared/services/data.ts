@@ -9,43 +9,44 @@ import { debug } from 'util';
 export class DataService {  
 
   public expenses = new Subject<Array<any>>();
+  public snapshot = {categories:[], expenses:[], total:0}
+
   public categories = {
     health: {icon:"heart", name: "Beauty & Health", link:"beauty-and-health"},
     transportation: {icon:"bus", name: "Transportation", link:"transportation"},
     coffee: {icon:"coffee", name: "Coffee and Food", link:"coffee-and-food"},
     utilities: {icon:"money", name: "Utilities Payments", link:"utilities-payments"}
   }
-  private _expenses = []
 
   constructor() { 
-    this._expenses = this.readExpenses()
+    this.loadExpenses()
   }
 
-  add(category,value,date, name):boolean{
+  add(category,value,date, name, note){
 
-    // persist
-    const expenses = JSON.parse(localStorage.getItem('expenses'))
+    this.loadExpenses()
+
+    this.snapshot.expenses = JSON.parse(localStorage.getItem('expenses'))
 
     if(value < 0){
-      return false
+      this.expenses.next([{error:{message:"negative"}}])  
     }
-
-    this.readExpenses().push({category,date,value, name})
-    expenses.push({category,date,value, name})
-    localStorage.setItem('expenses', JSON.stringify(expenses))
-    this.expenses.next(this._expenses)  
-
+    else{
+      this.snapshot.expenses.push({category,date,value, name, note})
+      localStorage.setItem('expenses', JSON.stringify(this.snapshot.expenses))
+      this.expenses.next(this.snapshot.expenses)  
+    }
   }
 
   getByDate(date){
-
-    return this.readExpenses().filter(e=>e.date === date)
+    this.loadExpenses();
+    return this.snapshot.expenses.filter(e=>e.date === date)
   }
 
   getByCategory(category){
-    console.log(category)
+    this.loadExpenses()
     const dates = []
-    const items = this.readExpenses().filter(e=> e.category === category)
+    const items = this.snapshot.expenses.filter(e=> e.category === category)
     const result = []
 
     items.map(i=> {
@@ -78,10 +79,14 @@ export class DataService {
     const result = []
     const categories =[]
 
-    this.readExpenses().map(e=>{
+    this.loadExpenses();
+    
+    this.snapshot.expenses.map(e=>{
       if(!categories.includes(e.category)){    
-        categories.push(e.category)    
-        let category = this.getByCategory(e.category)       
+        // controll categories found
+        categories.push(e.category) 
+
+        let category = this.getByCategory(e.category)   
         
         const total = category.map(i=>i.total).reduce((a,b)=> a + b)
 
@@ -98,7 +103,7 @@ export class DataService {
 
   generate(){
 
-    debugger
+    
     if(!localStorage.getItem('expenses')){
       localStorage.setItem('expenses',JSON.stringify([]))
       // this.add("coffee",20, '2020-05-25',"Starbucks")
@@ -113,11 +118,11 @@ export class DataService {
     
   }
 
-  readExpenses(){
+  loadExpenses(){
     if(!localStorage.getItem('expenses')){
       localStorage.setItem('expenses',JSON.stringify([]))
     }
 
-    return JSON.parse(localStorage.getItem('expenses'))
+    this.snapshot.expenses = JSON.parse(localStorage.getItem('expenses'))
   }
 }

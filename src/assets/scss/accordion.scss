@@ -6,7 +6,8 @@ accordion{
             border:0;
 
             &-heading{
-               
+               background-color: unset !important;
+
                 .title{
                     width: 160px;
                     margin: 8px auto;
@@ -14,7 +15,13 @@ accordion{
                     background: unset;
                     border: solid 1px #dfdae4;               
                     border-radius: 50px !important;
-                    padding: 8px;
+                    padding: 8px;              
+                }
+
+                label{
+                    &.subtitle{
+                        font-size: 0.8em;
+                    }
                 }
                 
                 button{
