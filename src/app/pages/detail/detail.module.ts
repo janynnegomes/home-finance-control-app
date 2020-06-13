@@ -5,6 +5,7 @@ import { DetailComponent } from './detail.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,6 +13,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
   declarations: [DetailComponent],
   imports: [
     CommonModule,
+    FormsModule,
     DetailRoutingModule,
     ComponentsModule,
     AngularFontAwesomeModule,

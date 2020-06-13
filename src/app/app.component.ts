@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    debugger
+    
     console.log('this.primarySampleComponent',this.expensesForm)
   }
   
@@ -61,12 +61,13 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.newExpenseLoadingTitle = "Wait a moment"
       this.newExpenseShowLoading = true;
 
-      debugger
+      
       this.dataService.add(
         this.newExpense['category'].name,
         parseFloat(this.newExpense['value']), 
         this.datePipe.transform(this.newExpense['date'],'yyyy-MM-dd'),
-        this.newExpense['location'])     
+        this.newExpense['location'],
+        this.newExpense['notes'])     
 
         let modal =this.modalRef
         let loading =this.newExpenseShowLoading

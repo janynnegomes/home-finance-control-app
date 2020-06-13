@@ -23,9 +23,40 @@
             }
 
         }
+
+        .chart-container{
+            canvas{
+             
+                // Large devices (desktops, 992px and up)
+                @media (min-width: 992px){  
+                    max-width: 50% !important;
+                }
+                
+                width: 100%;
+                max-width:80%;
+                margin: 32px auto;
+            }
+            .chart-inner{
+                top: -192px;
+                position: relative;
+                margin-bottom: -192px;
+                padding: 20px;      
+                
+                h3{
+                    color:#ffffff;
+                }
+            }
+        }
     }
     .content{
         background-color: #f7f7f7;        
         padding: 8px;
+
+       
+    }
+
+    
+    small{
+        font-size: 0.9em !important;
     }
 }

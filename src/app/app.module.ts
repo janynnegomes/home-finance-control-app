@@ -11,7 +11,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DatePipe } from '@angular/common';
+import { DatePipe, CurrencyPipe } from '@angular/common';
 //import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { UiModule } from './shared/ui/ui.module';
  
@@ -38,7 +38,7 @@ import { UiModule } from './shared/ui/ui.module';
     BsDatepickerModule.forRoot(),
   // NgxMaskModule.forRoot()
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
